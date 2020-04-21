@@ -2,6 +2,8 @@ package com.zephaniel.novia
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.telegram.telegrambots.ApiContextInitializer
+import javax.annotation.PostConstruct
 
 @SpringBootApplication
 class NoviaApplication {
@@ -12,4 +14,10 @@ class NoviaApplication {
             runApplication<NoviaApplication>(*args)
         }
     }
+
+    @PostConstruct
+    fun initTelegramBot() {
+        ApiContextInitializer.init()
+    }
+
 }
