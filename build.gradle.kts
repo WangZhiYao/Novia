@@ -17,13 +17,26 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    implementation("org.telegram:telegrambots:4.7")
+    implementation("org.telegram:telegrambots-spring-boot-starter:4.7")
+    implementation("org.telegram:telegrambots-abilities:4.7")
+
+    implementation("com.microsoft.azure:msal4j:1.4.0")
+    implementation("com.microsoft.azure:msal4j-persistence-extension:0.1")
+
+    implementation("org.quartz-scheduler:quartz:2.3.2")
+
+    implementation("com.squareup.okhttp3:okhttp:4.5.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.5.0")
 }
 
 tasks.withType<Test> {
